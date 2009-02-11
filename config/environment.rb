@@ -10,7 +10,7 @@ RAILS_GEM_VERSION = '2.2.2' unless defined? RAILS_GEM_VERSION
 # Bootstrap the Rails environment, frameworks, and default configuration
 require File.join(File.dirname(__FILE__), 'boot')
 
-# Set cookies to expire after 1 week so that users can vote only once a month
+# Set cookies to expire after 1 week so that users can vote only once a week
 # CGI::Session.expire_after 1.week
 
 Rails::Initializer.run do |config|

@@ -16,7 +16,7 @@ p {
 	height: 100px;
 	width: 100%;
 	border-bottom: 3px solid #3C4217;
-	background-image: url(images/css/title-bg.jpg);
+	background-image: url("images/css/title-bg.jpg");
 	background-repeat: repeat-x;
 	background-position: top lef;
 }
