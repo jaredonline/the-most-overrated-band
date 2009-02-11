@@ -90,7 +90,7 @@ p {
 	display: block;
 	width: 100%;
 	height: 100%;
-	background-image: url("file:///Users/jared/Documents/Most Overrated Band/Sample HTML/images/css/arrow_up.gif");
+	background-image: url("/images/css/arrow_up.gif");
 	background-repeat: no-repeat;
 	background-position: center center;
 }
@@ -103,7 +103,7 @@ p {
 	margin: 0;
 	padding: 0;
 	height: 30px;
-	background-image: url("file:///Users/jared/Documents/Most Overrated Band/Sample HTML/images/css/arrow_down.gif");
+	background-image: url("/images/css/arrow_down.gif");
 	background-repeat: no-repeat;
 	background-position: center center;
 }
