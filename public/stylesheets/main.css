@@ -1,0 +1,120 @@
+body {
+	font-family: Tahoma, Geneva, sans-serif;
+}
+
+p {
+	margin: 0;
+	padding: 0;
+	margin-top: 20px;
+	margin-bottom: 5px;
+	font-size: 1.2em;
+	color: #999;
+}
+
+#title {
+	background-color: #90C208;
+	height: 100px;
+	width: 100%;
+	border-bottom: 3px solid #3C4217;
+	background-image: url(images/css/title-bg.jpg);
+	background-repeat: repeat-x;
+	background-position: top lef;
+}
+	#title h1 {
+		font-weight: normal;
+		color: #fff;
+		font-family: Georgia, Georgia, serif;
+	}
+
+
+#content {
+	background-color: #fff;
+}
+	#content .band {
+		margin-bottom: 5px;
+	}
+	
+	#content .rank {
+		color: #DEDEDE;
+		font-size: 2.5em;
+	}
+	
+	#content .name {
+		margin: 0;
+		padding: 0;
+	}
+		#content .name {
+			
+		}
+		#content .submitted {
+			font-style: italic;
+			font-size: .5em;
+			margin-top: 5px;
+		}
+		#content .band-name {
+			font-size: 1.5em;
+			padding: 5px;
+		}
+			#content .band-name .votes {
+				font-size: .9em;
+				color: #999;
+			}
+		#content .odd .name {
+			background-color: #efefef;
+			border-top: 1px solid #CFCFCF;
+			border-bottom: 1px solid #CFCFCF;
+		}
+		
+		#content .winner .name {
+			background-color: #FFF1CC;
+			border-top: 1px solid #CFC4A5;
+			border-bottom: 1px solid #CFC4A5;
+		}
+			#content .winner .name {
+				color: black;
+			}
+
+#content .vote {
+	margin: 0;
+	padding: 0;
+	height: 60px;
+}
+#content .up {
+	background-color: #C4FFBD;
+	margin: 0;
+	padding: 0;
+	border-bottom: 1px solid #666;
+	height: 30px;
+}
+#content .up a {
+	display: block;
+	width: 100%;
+	height: 100%;
+	background-image: url("file:///Users/jared/Documents/Most Overrated Band/Sample HTML/images/css/arrow_up.gif");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#content .vote a span {
+	display: none;
+}
+
+#content .down {
+	background-color: #FFBDBD;
+	margin: 0;
+	padding: 0;
+	height: 30px;
+	background-image: url("file:///Users/jared/Documents/Most Overrated Band/Sample HTML/images/css/arrow_down.gif");
+	background-repeat: no-repeat;
+	background-position: center center;
+}
+#content .down a {
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+		
+#footer {
+	font-size: .8em;
+	font-style: italic;
+	margin-top: 20px;
+}
