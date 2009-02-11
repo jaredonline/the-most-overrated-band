@@ -17,7 +17,7 @@
 development:
   adapter: mysql
   encoding: utf8
-  database: the-most-overrated-band_development
+  database: overrated_development
   pool: 5
   username: root
   password:
@@ -29,7 +29,7 @@ development:
 test:
   adapter: mysql
   encoding: utf8
-  database: the-most-overrated-band_test
+  database: overrated_test
   pool: 5
   username: root
   password:
@@ -38,8 +38,7 @@ test:
 production:
   adapter: mysql
   encoding: utf8
-  database: the-most-overrated-band_production
+  database: overrated_production
   pool: 5
   username: root
-  password: 
-  socket: /tmp/mysql.sock
+  password: Tucsonbyena72
