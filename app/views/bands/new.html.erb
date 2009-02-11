@@ -1,0 +1,12 @@
+<div class="grid_11 prefix_1">
+		<p>
+			Add a new band
+		</p>
+		
+		<% form_for @band do |f| %>
+      <p>Name:</p>
+      <%= f.text_field :name %>
+      
+      <p><%= f.submit "Add new band"%></p>
+		<% end %>
+	</div>

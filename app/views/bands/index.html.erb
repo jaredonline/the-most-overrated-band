@@ -1,0 +1,19 @@
+	<div class="grid_11 prefix_1">
+		<p>
+			The most overrated band ever is...
+		</p>
+	</div>
+	
+	<%= render :partial => 'winner', :locals => { :band => @winner } %>
+	
+	<div class="grid_11 prefix_1">
+		<p>
+			The runners up...
+		</p>
+	</div>
+	
+	<%= render :partial => 'band', :collection => @bands %>
+	
+	<div class="grid_11 prefix_1 button add">
+	  <%= link_to 'Add a band', new_band_path %>
+	</div>

@@ -1,0 +1,28 @@
+<!-- Band Block -->
+<div class="grid_12 band winner">
+	
+	<!-- Band Rank -->
+	<div class="alpha grid_1 rank">
+		#1
+	</div>
+	
+	<!-- Band Info -->
+	<div class="omega grid_11 name">
+		<div class="grid_1 vote alpha">
+			<div class="grid_1 up">
+				<%= link_to '<span>Up</span>', up_band_path(band) %>
+			</div>
+			<div class="grid_1 down">
+				<%= link_to '<span>Down</span>', down_band_path(band) %>
+			</div>
+		</div>
+		
+		<div class="omega grid_10 band-name">
+			<%= band.name %> - <span class="votes"><%= band.num_votes %> votes</span>
+			<div class="grid_9 submitted">
+				Submitted on <%= band.created_at %>
+			</div>
+		</div>
+	</div>
+					
+</div>
