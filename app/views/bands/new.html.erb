@@ -9,4 +9,17 @@
       
       <p><%= f.submit "Add new band"%></p>
 		<% end %>
+		
+		<% if @suggestions %>
+		  <% unless @suggestions.length == 0 %>
+		    <p>Maybe you meant...</p>
+  		  <ul>
+  		  <% for suggestion in @suggestions %>
+  		    <li><%= suggestion %></li>
+  		  <% end %>
+  		  </ul>
+  		<% else %>
+  		  <i>I have absolutely no idea what band you could be trying to reference.</i>
+  		<% end %>
+		<% end %>
 	</div>
