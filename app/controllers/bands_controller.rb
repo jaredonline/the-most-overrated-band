@@ -3,10 +3,6 @@ class BandsController < ApplicationController
   require 'hpricot'
   require 'open-uri'
   
-  #make_resourceful do
-  #  actions :all, :except => [:show]
-  #end
-  
   def index
     @winner = Band.find(:first, :order => "num_votes DESC")
     @bands = Band.find(:all, :conditions => "id != #{@winner.id}", :order => "num_votes DESC")
@@ -23,26 +19,24 @@ class BandsController < ApplicationController
     end
     
     
-      if band_names.include?(@band.name)
-       unless Band.exists?(:name => @band.name)
-          if @band.save
-            flash[:notice] = 'Band was successfully created.'
-            redirect_to(@band)
-            # format.xml  { render :xml => @band, :status => :created, :location => @band }
-          else
-            flash[:error] = "Unable to save band for some reason."
-            render :action => "new"
-            # format.xml  { render :xml => @band.errors, :status => :unprocessable_entity }
-          end
+    if band_names.include?(@band.name)
+     unless Band.exists?(:name => @band.name)
+        if @band.save
+          flash[:notice] = 'Band was successfully created.'
+          redirect_to(@band)
         else
-          @band = Band.find_by_name(params[:band][:name])
-          redirect_to up_band_path(@band)
+          flash[:error] = "Unable to save band for some reason."
+          render :action => "new"
         end
       else
-        flash[:error] = "That's not a real band."
-        @suggestions = band_names
-        render :action => "new"
+        @band = Band.find_by_name(params[:band][:name])
+        redirect_to up_band_path(@band)
       end
+    else
+      flash[:error] = "That's not a real band."
+      @suggestions = band_names
+      render :action => "new"
+    end
     
   end
   
@@ -53,7 +47,6 @@ class BandsController < ApplicationController
     
     @band_image = doc.at("//image[@size='large']").inner_html
     @band_desc = doc.at("//artist/bio/summary").inner_html.gsub(/<\!\[CDATA\[/, "").gsub(/\]\]\>/, "")
-    # @band_link = doc.at("//url").inner_html
   end
   
   def up
