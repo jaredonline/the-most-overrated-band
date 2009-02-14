@@ -23,6 +23,11 @@ body {
 	font-size: 1.1em;
 }
 
+.img-left {
+  float: left;
+  margin: 10px;
+}
+
 #content .button {
 	margin-left: 0;
 	margin-top: 10px;

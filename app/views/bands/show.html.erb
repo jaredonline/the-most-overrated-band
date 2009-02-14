@@ -2,13 +2,20 @@
   <h1><%= @band.name %></h1>
 </div>
 
-<div class="grid_12">
-  <% if @band_image %>
+<div class="grid_12 clearfix">
+  <% if @band_image.length != 0 %>
     <div class="img-left">
       <%= image_tag @band_image %>
     </div>
   <% end %>
-  <div class="band-desc">
-    <%= @band_desc.gsub(/<\!\[CDATA\[/, "").gsub(/\]\]\>/, "") %>
-  </div>
+  
+  <% if @band_desc.length != 0 %>
+    <div class="band-desc">
+      <%= @band_desc %>
+    </div>
+  <% end %>
+</div>
+
+<div class="grid_12">
+  <%= render :partial => 'comment', :collection => @band.comments %>
 </div>

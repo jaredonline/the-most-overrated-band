@@ -51,7 +51,8 @@ class BandsController < ApplicationController
     doc = Hpricot.XML(open('http://ws.audioscrobbler.com/2.0/?method=artist.getInfo&artist=' + @band.url_escape + '&api_key=' + LASTFM_API_KEY))
     
     @band_image = doc.at("//image[@size='large']").inner_html
-    @band_desc = doc.at("//artist/bio/summary").inner_html
+    @band_desc = doc.at("//artist/bio/summary").inner_html.gsub(/<\!\[CDATA\[/, "").gsub(/\]\]\>/, "")
+    # @band_link = doc.at("//url").inner_html
   end
   
   def up
