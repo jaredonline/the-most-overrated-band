@@ -5,6 +5,7 @@ ActionController::Routing::Routes.draw do |map|
   
   map.resources :bands, :member => {:up => :get, :down => :get} do |band|
     band.resources :votes
+    band.resources :comments
   end
   
   # Sample of regular route:

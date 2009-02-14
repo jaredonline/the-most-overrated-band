@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090214013346) do
+ActiveRecord::Schema.define(:version => 20090214015440) do
 
   create_table "bands", :force => true do |t|
     t.string   "name"
@@ -17,6 +17,7 @@ ActiveRecord::Schema.define(:version => 20090214013346) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "num_votes",  :default => 1
+    t.string   "permalink"
   end
 
   create_table "comments", :force => true do |t|

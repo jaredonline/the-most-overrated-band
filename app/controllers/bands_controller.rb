@@ -3,9 +3,9 @@ class BandsController < ApplicationController
   require 'hpricot'
   require 'open-uri'
   
-  make_resourceful do
-    actions :all
-  end
+  #make_resourceful do
+  #  actions :all, :except => [:show]
+  #end
   
   def index
     @winner = Band.find(:first, :order => "num_votes DESC")
@@ -47,7 +47,8 @@ class BandsController < ApplicationController
   end
   
   def show
-    @band = Band.find(params[:id])
+    @band = Band.find_by_permalink(params[:id])
+    @comments = @band.comments.find(:all, :order => "created_at DESC")
     doc = Hpricot.XML(open('http://ws.audioscrobbler.com/2.0/?method=artist.getInfo&artist=' + @band.url_escape + '&api_key=' + LASTFM_API_KEY))
     
     @band_image = doc.at("//image[@size='large']").inner_html
@@ -56,11 +57,11 @@ class BandsController < ApplicationController
   end
   
   def up
-    vote = Vote.find(:all, :conditions => "user_id = #{@user.id} AND band_id = #{params[:id]}")
+    band = Band.find_by_permalink(params[:id])
+    vote = Vote.find(:all, :conditions => "user_id = #{@user.id} AND band_id = #{band.id}")
     if vote.length == 0
       vote = Vote.new(:band_id => params[:id], :user_id => @user.id, :direction => 1)
       vote.save
-      band = Band.find(params[:id])
       band.num_votes = band.num_votes.next
       band.save
     else
@@ -70,11 +71,11 @@ class BandsController < ApplicationController
   end
   
   def down
-    vote = Vote.find(:all, :conditions => "user_id = #{@user.id} AND band_id = #{params[:id]}")
+    band = Band.find_by_permalink(params[:id])
+    vote = Vote.find(:all, :conditions => "user_id = #{@user.id} AND band_id = #{band.id}")
     if vote.length == 0  
       vote = Vote.new(:band_id => params[:id], :user_id => @user.id, :direction => -1)
       vote.save
-      band = Band.find(params[:id])
       band.num_votes = band.num_votes - 1
       band.save
     else

@@ -16,6 +16,7 @@
   <% end %>
 </div>
 
-<div class="grid_12">
-  <%= render :partial => 'comment', :collection => @band.comments %>
+<div class="grid_12 band-name">
+  <h1>Comments</h1>
+  <%= render :partial => 'comment', :collection => @comments %>
 </div>
