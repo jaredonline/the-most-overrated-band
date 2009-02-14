@@ -28,7 +28,7 @@ end
 		<div class="omega grid_10 band-name">
 			<%= link_to band.name, band_path(band) %> - <span class="votes"><%= band.num_votes %> votes</span>
 			<div class="grid_9 submitted">
-				Submitted on <%= band.created_at %>
+				Submitted <%= vague_timeago(band.created_at) %>
 			</div>
 		</div>
 	</div>
