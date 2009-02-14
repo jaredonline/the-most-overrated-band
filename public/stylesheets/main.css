@@ -81,6 +81,12 @@ p {
 			font-size: 1.5em;
 			padding: 5px;
 		}
+		  #content .band-name h1 {
+		    color: #999;
+		    font-family: Georgia, Georgia, serif;
+		    font-weight: normal;
+		    border-bottom: 1px solid #999;
+		  }
 			#content .band-name .votes {
 				font-size: .9em;
 				color: #999;

@@ -26,7 +26,7 @@ end
 		</div>
 		
 		<div class="omega grid_10 band-name">
-			<%= band.name %> - <span class="votes"><%= band.num_votes %> votes</span>
+			<%= link_to band.name, band_path(band) %> - <span class="votes"><%= band.num_votes %> votes</span>
 			<div class="grid_9 submitted">
 				Submitted on <%= band.created_at %>
 			</div>

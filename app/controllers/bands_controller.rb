@@ -47,7 +47,11 @@ class BandsController < ApplicationController
   end
   
   def show
-    redirect_to "/"
+    @band = Band.find(params[:id])
+    doc = Hpricot.XML(open('http://ws.audioscrobbler.com/2.0/?method=artist.getInfo&artist=' + @band.url_escape + '&api_key=' + LASTFM_API_KEY))
+    
+    @band_image = doc.at("//image[@size='large']").inner_html
+    @band_desc = doc.at("//artist/bio/summary").inner_html
   end
   
   def up
