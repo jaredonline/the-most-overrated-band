@@ -15,6 +15,18 @@ body {
 	text-decoration: underline;
 }
 
+a {
+	color: #90C208;
+	text-decoration: none;
+}
+a:hover {
+	color: #fff;
+	background-color: #999;
+}
+a:visited {
+	color: #3F5403;
+}
+
 .error {
 	padding: 5px;
 	background-color: red;
@@ -26,6 +38,8 @@ body {
 .img-left {
   float: left;
   margin: 10px;
+  margin-top: 0;
+  margin-left: 0;
 }
 
 #content .button {
@@ -56,11 +70,51 @@ p {
 		color: #fff;
 		font-family: Georgia, Georgia, serif;
 	}
+		#title h1 a {
+			color: white;
+		}
+		#title h1 a:hover {
+			background-color: transparent;
+			color:  white;
+			text-decoration: underline;
+		}
+		#title h1 a:visited {
+			color: white;
+		}
 
+
+.comment-form-container {
+	margin-top: 20px;
+}
+.comment-form label {
+	display: block;
+	color: #999;
+	font-size: .7em;
+}
 
 #content {
 	background-color: #fff;
 }
+	#content h1.comments {
+		font-size: .9em;
+		margin-top: 20px;
+	}
+		#content h1.comments small {
+			font-size: .9em;
+			color: black;
+		}
+	#content .comment.name {
+		padding-left: 10px;
+	}
+	#content .comment-date {
+		color: #999;
+		font-size: .8em;
+	}
+		#content .comment .body {
+			color: #999;
+			font-size: .7em;
+			font-weight: normal;
+		}
 	#content .band {
 		margin-bottom: 5px;
 	}

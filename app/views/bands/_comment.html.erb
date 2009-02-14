@@ -3,13 +3,14 @@ div_class = (comment_counter % 2 == 0) ? 'even' : 'odd'
 %>
 
 <div class="<%=div_class%>">
-  <div class="name">
-    <%= comment.name %>
+  <div class="name comment">
+    <div class="comment-name">
+    	<a href="mailto:test@test.com"><%= comment.name %></a><span class="comment-date"><%= comment.created_at %></span>
+    </div>
     
-    <p>
-      <%= comment.body %>
-    </p>
+    <div class="body">
+    	<%= comment.body %>
+    </div>
     
   </div>
-  
 </div>

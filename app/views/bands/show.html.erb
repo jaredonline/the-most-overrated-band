@@ -18,5 +18,10 @@
 
 <div class="grid_12 band-name">
   <h1>Comments</h1>
+  
+  <% form_for @band.comments.new, :url => band_comments_path(@band) do |f| %>
+    <%= render :partial => 'form' %>
+  <% end %>
+  
   <%= render :partial => 'comment', :collection => @comments %>
 </div>
