@@ -18052,3 +18052,1996 @@ Rendered bands/_form (0.1ms)
 Rendered bands/_comment (0.7ms)
 Rendered bands/_comment (0.3ms)
 Completed in 514ms (View: 18, DB: 7) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:33:02) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (1.1ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.1ms)
+
+
+ActionView::TemplateError (undefined method `–' for #<ActionView::Base:0x21f3c0c>) on line #8 of app/views/bands/_comment.html.erb:
+5: <div class="<%=div_class%>">
+6:   <div class="name comment">
+7:     <div class="comment-name">
+8:     	<a href="mailto:test@test.com"><%= comment.name %></a><span class="comment-date"><%= timeago(comment.created_at) %></span>
+9:     </div>
+10:     
+11:     <div class="body">
+
+    app/helpers/application_helper.rb:70:in `timeago'
+    app/views/bands/_comment.html.erb:8
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:184:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:179:in `map'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:179:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:150:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+    app/views/bands/show.html.erb:26
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (40.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.7ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:33:39) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (4.5ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.2ms)
+
+
+ActionView::TemplateError (undefined local variable or method `’' for #<ActionView::Base:0x217d228>) on line #8 of app/views/bands/_comment.html.erb:
+5: <div class="<%=div_class%>">
+6:   <div class="name comment">
+7:     <div class="comment-name">
+8:     	<a href="mailto:test@test.com"><%= comment.name %></a><span class="comment-date"><%= timeago(comment.created_at) %></span>
+9:     </div>
+10:     
+11:     <div class="body">
+
+    app/helpers/application_helper.rb:91:in `timeago'
+    app/views/bands/_comment.html.erb:8
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:184:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:179:in `map'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:179:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:150:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+    app/views/bands/show.html.erb:26
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (37.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.7ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:34:03) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.2ms)
+Rendered bands/_comment (0.7ms)
+Rendered bands/_comment (0.6ms)
+Completed in 519ms (View: 19, DB: 7) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:34:20) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (1.7ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.2ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.3ms)
+Completed in 587ms (View: 87, DB: 7) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:35:01) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.4ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.2ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.3ms)
+Completed in 527ms (View: 15, DB: 5) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:35:08) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.5ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.2ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.4ms)
+Completed in 503ms (View: 17, DB: 5) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:35:18) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (1.0ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (3.2ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.2ms)
+Rendered bands/_comment (1.7ms)
+Rendered bands/_comment (2.1ms)
+Completed in 518ms (View: 20, DB: 7) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:37:20) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.2ms)
+Rendered bands/_comment (0.6ms)
+Rendered bands/_comment (0.6ms)
+Completed in 541ms (View: 19, DB: 4) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:38:57) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+
+
+ActionView::TemplateError (undefined local variable or method `f' for #<ActionView::Base:0x2266694>) on line #3 of app/views/bands/_form.html.erb:
+1: <fieldset class="comment-form">
+2:   <label>Name</label>
+3:   <%= f.text_field :name %>
+4:   <label>Email</label>
+5:   <%= f.text_field :email %>
+6:   <label>Website</label>
+
+    app/views/bands/_form.html.erb:3
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:152:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+    app/views/bands/show.html.erb:23
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/form_helper.rb:313:in `fields_for'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/form_helper.rb:253:in `form_for'
+    app/views/bands/show.html.erb:22
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (100.8ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.7ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:39:10) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.6ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (1.2ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.3ms)
+Completed in 536ms (View: 19, DB: 6) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:39:23) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (4.0ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_form (0.6ms)
+Completed in 499ms (View: 14, DB: 4) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:39:58) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.5ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.5ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (3.5ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (7.3ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_form (0.9ms)
+Completed in 590ms (View: 21, DB: 5) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:41:02) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.4ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.6ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (6.8ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_form (0.7ms)
+
+
+ActionView::TemplateError (undefined method `submi' for #<ActionView::Helpers::FormBuilder:0x21a78d4>) on line #27 of app/views/bands/show.html.erb:
+24:   <div class="comment-form-container">
+25:     <% form_for @band.comments.new, :url => band_comments_path(@band) do |f| %>
+26:       <%= render :partial => 'form', :locals => {:f => f} %>
+27:       <%= f.submi "Comment!" %>
+28:     <% end %>
+29:   </div>
+30: </div>
+
+    app/views/bands/show.html.erb:27
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/form_helper.rb:313:in `fields_for'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/helpers/form_helper.rb:253:in `form_for'
+    app/views/bands/show.html.erb:25
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (99.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.7ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:41:09) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (3.8ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (5.0ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_form (0.6ms)
+Completed in 535ms (View: 14, DB: 7) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-02-13 21:41:18) [POST]
+  Parameters: {"commit"=>"Comment!", "authenticity_token"=>"032dfebc4a3604dceca900d60385fc90e1cbfcbe", "band_id"=>"crash-test-dummies", "comment"=>{"name"=>"Anonymous Coward", "body"=>"Test", "website"=>"", "email"=>"jared.online@gmail.com"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.4ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`id` = 0) [0m
+
+
+ActiveRecord::RecordNotFound (Couldn't find Band with ID=crash-test-dummies):
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1528:in `find_one'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1511:in `find_from_ids'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:590:in `find'
+    /vendor/plugins/make_resourceful/lib/resourceful/default/accessors.rb:314:in `parent_object'
+    /vendor/plugins/make_resourceful/lib/resourceful/default/accessors.rb:323:in `load_parent_object'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:178:in `send'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:178:in `evaluate_method'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/callbacks.rb:166:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:225:in `call'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:629:in `run_before_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:615:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (35.1ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-02-13 21:42:43) [POST]
+  Parameters: {"commit"=>"Comment!", "authenticity_token"=>"032dfebc4a3604dceca900d60385fc90e1cbfcbe", "band_id"=>"crash-test-dummies", "comment"=>{"name"=>"Anonymous Coward", "body"=>"Test", "website"=>"", "email"=>"jared.online@gmail.com"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mComment Columns (3.4ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mBEGIN[0m
+  [4;36;1mComment Create (0.3ms)[0m   [0;1mINSERT INTO `comments` (`name`, `updated_at`, `body`, `website`, `user_id`, `band_id`, `email`, `created_at`) VALUES('Anonymous Coward', '2009-02-14 04:42:43', 'Test', '', NULL, NULL, 'jared.online@gmail.com', '2009-02-14 04:42:43')[0m
+  [4;35;1mSQL (1.5ms)[0m   [0mCOMMIT[0m
+
+
+ActionController::RoutingError (band_url failed to generate from {:action=>"show", :controller=>"bands", :id=>nil}, expected: {:action=>"show", :controller=>"bands"}, diff: {:id=>nil}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:377:in `raise_named_route_error'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:341:in `generate'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/url_rewriter.rb:208:in `rewrite_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/url_rewriter.rb:187:in `rewrite_url'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/url_rewriter.rb:165:in `rewrite'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:626:in `url_for'
+    (eval):16:in `band_path'
+    /app/controllers/comments_controller.rb:7:in `create'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-02-13 21:43:46) [POST]
+  Parameters: {"commit"=>"Comment!", "authenticity_token"=>"032dfebc4a3604dceca900d60385fc90e1cbfcbe", "band_id"=>"crash-test-dummies", "comment"=>{"name"=>"Anonymous Coward", "body"=>"Test", "website"=>"", "email"=>"jared.online@gmail.com"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW TABLES[0m
+
+
+NoMethodError (undefined method `comments' for #<Class:0x231a874>):
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/base.rb:1833:in `method_missing'
+    /app/controllers/comments_controller.rb:5:in `create'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1253:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (34.5ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-02-13 21:43:57) [POST]
+  Parameters: {"commit"=>"Comment!", "authenticity_token"=>"032dfebc4a3604dceca900d60385fc90e1cbfcbe", "band_id"=>"crash-test-dummies", "comment"=>{"name"=>"Anonymous Coward", "body"=>"Test", "website"=>"", "email"=>"jared.online@gmail.com"}}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (2.6ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mComment Create (0.3ms)[0m   [0mINSERT INTO `comments` (`name`, `updated_at`, `body`, `website`, `user_id`, `band_id`, `email`, `created_at`) VALUES('Anonymous Coward', '2009-02-14 04:43:57', 'Test', '', NULL, 9, 'jared.online@gmail.com', '2009-02-14 04:43:57')[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mBand Load (0.3ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`id` = 9) [0m
+Redirected to /bands/crash-test-dummies
+Completed in 35ms (DB: 10) | 302 Found [http://localhost/bands/crash-test-dummies/comments]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:43:57) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.5ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+
+
+ActionView::TemplateError (undefined method `link_to' for #<Comment:0x1facc50>) on line #8 of app/views/bands/_comment.html.erb:
+5: <div class="<%=div_class%>">
+6:   <div class="name comment">
+7:     <div class="comment-name">
+8:     	<%= comment.link %><span class="comment-date"><%= vague_timeago(comment.created_at) %></span>
+9:     </div>
+10:     
+11:     <div class="body">
+
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/attribute_methods.rb:260:in `method_missing'
+    app/models/comment.rb:7:in `link'
+    app/views/bands/_comment.html.erb:8
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:184:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:179:in `map'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:179:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:150:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+    app/views/bands/show.html.erb:22
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (38.2ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.9ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-02-13 21:45:55) [POST]
+  Parameters: {"commit"=>"Comment!", "authenticity_token"=>"032dfebc4a3604dceca900d60385fc90e1cbfcbe", "band_id"=>"crash-test-dummies", "comment"=>{"name"=>"Anonymous Coward", "body"=>"Test", "website"=>"", "email"=>"jared.online@gmail.com"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (1.0ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mBEGIN[0m
+  [4;36;1mComment Create (0.4ms)[0m   [0;1mINSERT INTO `comments` (`name`, `updated_at`, `body`, `website`, `user_id`, `band_id`, `email`, `created_at`) VALUES('Anonymous Coward', '2009-02-14 04:45:56', 'Test', '', NULL, 9, 'jared.online@gmail.com', '2009-02-14 04:45:56')[0m
+  [4;35;1mSQL (0.9ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBand Load (0.1ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`id` = 9) [0m
+Redirected to /bands/crash-test-dummies
+Completed in 33ms (DB: 10) | 302 Found [http://localhost/bands/crash-test-dummies/comments]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:45:56) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.2ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (7.7ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_form (0.9ms)
+Completed in 724ms (View: 128, DB: 5) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:47:03) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;36;1mBand Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.8ms)[0m   [0mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.9ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Completed in 33ms (View: 17, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:48:02) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '13b47cca14ebffe8c30f942e4c3f726f2cae3ad8') LIMIT 1[0m
+  [4;36;1mBand Load (0.2ms)[0m   [0;1mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;35;1mBand Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.9ms)[0m   [0;1mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (2.5ms)
+Rendered bands/_band (0.7ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.7ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Completed in 37ms (View: 19, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:49:04) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;36;1mBand Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.5ms)[0m   [0mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Completed in 29ms (View: 15, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:49:07) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (1.2ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.3ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (3.1ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (6.5ms)
+Rendered bands/_comment (0.6ms)
+Rendered bands/_comment (0.6ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_form (1.1ms)
+Completed in 613ms (View: 23, DB: 7) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:49:10) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.1ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (3.0ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (6.4ms)
+Rendered bands/_comment (0.6ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_form (0.8ms)
+Completed in 538ms (View: 19, DB: 6) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:49:14) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (8.7ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (1.4ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (4.7ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_comment (0.2ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_form (0.5ms)
+Completed in 583ms (View: 16, DB: 14) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing CommentsController#create (for 127.0.0.1 at 2009-02-13 21:49:37) [POST]
+  Parameters: {"commit"=>"Comment!", "authenticity_token"=>"032dfebc4a3604dceca900d60385fc90e1cbfcbe", "band_id"=>"crash-test-dummies", "comment"=>{"name"=>"Anonymous Coward", "body"=>"argity rawr sawce", "website"=>"", "email"=>"jared.online@gmail.com"}}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.2ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (1.0ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (4.3ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (1.0ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+  [4;35;1mSQL (1.6ms)[0m   [0mBEGIN[0m
+  [4;36;1mComment Create (0.5ms)[0m   [0;1mINSERT INTO `comments` (`name`, `updated_at`, `body`, `website`, `user_id`, `band_id`, `email`, `created_at`) VALUES('Anonymous Coward', '2009-02-14 04:49:37', 'argity rawr sawce', '', NULL, 9, 'jared.online@gmail.com', '2009-02-14 04:49:37')[0m
+  [4;35;1mSQL (3.3ms)[0m   [0mCOMMIT[0m
+  [4;36;1mBand Load (0.1ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`id` = 9) [0m
+Redirected to /bands/crash-test-dummies
+Completed in 35ms (DB: 17) | 302 Found [http://localhost/bands/crash-test-dummies/comments]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:49:37) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.3ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.9ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Load (5.8ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Columns (34.7ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (37.6ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_form (0.6ms)
+Completed in 650ms (View: 58, DB: 13) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:49:41) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.7ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (42.7ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (4.7ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Columns (7.5ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (11.1ms)
+Rendered bands/_comment (0.6ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_form (1.1ms)
+Completed in 623ms (View: 26, DB: 51) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:50:14) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (1.3ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Columns (3.1ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (6.3ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.5ms)
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length) on line #8 of app/views/bands/_comment.html.erb:
+5: <div class="<%=div_class%>">
+6:   <div class="name comment">
+7:     <div class="comment-name">
+8:     	<% if comment.link %>
+9:     	  <%= link_to comment.name, comment.link %>
+10:     	<% else %>
+11:     	  <%= comment.name %>
+
+    app/models/comment.rb:6:in `link'
+    app/views/bands/_comment.html.erb:8
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:184:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:179:in `map'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:179:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:150:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+    app/views/bands/show.html.erb:22
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (38.6ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.8ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:50:47) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.1ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (7.1ms)
+Rendered bands/_comment (0.6ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_form (0.8ms)
+Completed in 517ms (View: 21, DB: 5) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:50:49) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.1ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Columns (3.3ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (73.7ms)
+Rendered bands/_comment (0.6ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_form (0.7ms)
+Completed in 575ms (View: 86, DB: 5) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:50:52) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (3.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (3.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (3.4ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (1.0ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Columns (2.8ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (6.4ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_form (0.8ms)
+Completed in 550ms (View: 19, DB: 12) | 200 OK [http://localhost/bands/crash-test-dummies]
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM `comments` ORDER BY comments.id DESC LIMIT 1[0m
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:51:29) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.0ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.1ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (4.2ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.5ms)
+
+
+ActionView::TemplateError (You have a nil object when you didn't expect it!
+You might have expected an instance of Array.
+The error occurred while evaluating nil.length) on line #8 of app/views/bands/_comment.html.erb:
+5: <div class="<%=div_class%>">
+6:   <div class="name comment">
+7:     <div class="comment-name">
+8:     	<% if comment.link %>
+9:     	  <%= link_to comment.name, comment.link %>
+10:     	<% else %>
+11:     	  <%= comment.name %>
+
+    app/models/comment.rb:6:in `link'
+    app/views/bands/_comment.html.erb:8
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:20:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:26:in `benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:19:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable_partial.rb:45:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:184:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:179:in `map'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:179:in `render_partial_collection'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/partials.rb:150:in `render_partial'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:258:in `render'
+    app/views/bands/show.html.erb:22
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/renderable.rb:39:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/template.rb:73:in `render_template'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:256:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:367:in `_render_with_layout'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_view/base.rb:254:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1174:in `render_for_file'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:896:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:868:in `render_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/core_ext/benchmark.rb:8:in `realtime'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:51:in `render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1248:in `default_render'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:1254:in `perform_action_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:617:in `call_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:610:in `perform_action_without_benchmark'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /System/Library/Frameworks/Ruby.framework/Versions/1.8/usr/lib/ruby/1.8/benchmark.rb:293:in `measure'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/benchmarking.rb:68:in `perform_action_without_rescue'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/rescue.rb:136:in `perform_action_without_caching'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:13:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/connection_adapters/abstract/query_cache.rb:34:in `cache'
+    /Library/Ruby/Gems/1.8/gems/activerecord-2.2.2/lib/active_record/query_cache.rb:8:in `cache'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/caching/sql_cache.rb:12:in `perform_action'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `send'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:524:in `process_without_filters'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/filters.rb:606:in `process_without_session_management_support'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/session_management.rb:134:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/base.rb:392:in `process'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:183:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_trace (108.4ms)
+Rendered /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/_request_and_response (0.7ms)
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (internal_server_error)
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:52:07) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.8ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.1ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Load (0.2ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Columns (3.0ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (6.2ms)
+Rendered bands/_comment (0.6ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_form (1.8ms)
+Completed in 522ms (View: 22, DB: 4) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing ApplicationController#index (for 127.0.0.1 at 2009-02-13 21:52:10) [GET]
+
+
+ActionController::RoutingError (No route matches "/bands/jared.online@gmail.com" with {:method=>:get}):
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/recognition_optimisation.rb:66:in `recognize_path'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/routing/route_set.rb:386:in `recognize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:182:in `handle_request'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:110:in `dispatch_unlocked'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:123:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:122:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:132:in `dispatch_cgi'
+    /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/dispatcher.rb:39:in `dispatch'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:76:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `synchronize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/../lib/mongrel/rails.rb:74:in `process'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:159:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:158:in `process_client'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:285:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `initialize'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `new'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel.rb:268:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:282:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `each'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/configurator.rb:281:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:128:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/lib/mongrel/command.rb:212:in `run'
+    /Library/Ruby/Gems/1.8/gems/mongrel-1.1.5/bin/mongrel_rails:281
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load_without_new_constant_marking'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:142:in `load'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/servers/mongrel.rb:64
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:521:in `new_constants_in'
+    /Library/Ruby/Gems/1.8/gems/activesupport-2.2.2/lib/active_support/dependencies.rb:153:in `require'
+    /Library/Ruby/Gems/1.8/gems/rails-2.2.2/lib/commands/server.rb:49
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `gem_original_require'
+    /Library/Ruby/Site/1.8/rubygems/custom_require.rb:31:in `require'
+    script/server:3
+
+Rendering /Library/Ruby/Gems/1.8/gems/actionpack-2.2.2/lib/action_controller/templates/rescues/layout.erb (not_found)
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:52:29) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (1.3ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.2ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Columns (2.9ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (6.3ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_form (0.8ms)
+Completed in 529ms (View: 20, DB: 7) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:52:43) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;36;1mBand Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (2.6ms)[0m   [0mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.8ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Completed in 37ms (View: 18, DB: 7) | 200 OK [http://localhost/]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:52:46) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (3.5ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (5.6ms)
+Rendered bands/_comment (0.5ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_comment (0.4ms)
+Rendered bands/_form (1.9ms)
+Completed in 515ms (View: 19, DB: 7) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:53:32) [GET]
+  Parameters: {"id"=>"crash-test-dummies"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.3ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'crash-test-dummies') LIMIT 1[0m
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Load (0.6ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 9) [0m
+  [4;36;1mComment Columns (2.1ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_comment (4.2ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_comment (0.2ms)
+Rendered bands/_comment (0.3ms)
+Rendered bands/_form (0.6ms)
+Completed in 506ms (View: 16, DB: 4) | 200 OK [http://localhost/bands/crash-test-dummies]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:53:37) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;36;1mBand Columns (3.6ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (1.0ms)[0m   [0mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.7ms)
+Rendered bands/_band (0.8ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Completed in 96ms (View: 77, DB: 8) | 200 OK [http://localhost/]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:53:38) [GET]
+  Parameters: {"id"=>"blink-182"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (3.7ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'blink-182') LIMIT 1[0m
+  [4;36;1mComment Load (0.8ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 1) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Load (0.4ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 1) [0m
+  [4;36;1mComment Columns (2.2ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.7ms)
+Completed in 536ms (View: 16, DB: 8) | 200 OK [http://localhost/bands/blink-182]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:53:53) [GET]
+  Parameters: {"id"=>"blink-182"}
+  [4;35;1mSQL (0.2ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.4ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (2.0ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'blink-182') LIMIT 1[0m
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 1) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Load (0.2ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 1) [0m
+  [4;35;1mComment Columns (2.9ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (1.0ms)
+Completed in 557ms (View: 19, DB: 6) | 200 OK [http://localhost/bands/blink-182]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:54:22) [GET]
+  Parameters: {"id"=>"blink-182"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (2.7ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'blink-182') LIMIT 1[0m
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 1) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;35;1mComment Load (0.1ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 1) [0m
+  [4;36;1mComment Columns (2.6ms)[0m   [0;1mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.6ms)
+Completed in 494ms (View: 13, DB: 6) | 200 OK [http://localhost/bands/blink-182]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:55:02) [GET]
+  Parameters: {"id"=>"blink-182"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (2.0ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.4ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'blink-182') LIMIT 1[0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 1) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Load (0.1ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 1) [0m
+  [4;35;1mComment Columns (3.8ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (0.8ms)
+Completed in 600ms (View: 16, DB: 5) | 200 OK [http://localhost/bands/blink-182]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:55:12) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (15.0ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Load (0.2ms)[0m   [0;1mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;35;1mBand Columns (37.1ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (21.2ms)[0m   [0;1mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (3.0ms)
+Rendered bands/_band (0.9ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (1.1ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Completed in 110ms (View: 22, DB: 74) | 200 OK [http://localhost/]
+
+
+Processing BandsController#show (for 127.0.0.1 at 2009-02-13 21:55:16) [GET]
+  Parameters: {"id"=>"penis"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (1.6ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.6ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`permalink` = 'penis') LIMIT 1[0m
+  [4;35;1mComment Load (0.3ms)[0m   [0mSELECT * FROM `comments` WHERE (`comments`.band_id = 7) ORDER BY created_at DESC[0m
+Rendering template within layouts/application
+Rendering bands/show
+  [4;36;1mComment Load (0.4ms)[0m   [0;1mSELECT * FROM `comments` WHERE (`comments`.band_id = 7) [0m
+  [4;35;1mComment Columns (2.8ms)[0m   [0mSHOW FIELDS FROM `comments`[0m
+Rendered bands/_form (1.2ms)
+Completed in 700ms (View: 20, DB: 5) | 200 OK [http://localhost/bands/penis]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:55:25) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Load (0.5ms)[0m   [0;1mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;35;1mBand Columns (2.1ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.5ms)[0m   [0;1mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Completed in 33ms (View: 15, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:56:59) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (1.5ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.5ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;36;1mBand Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.7ms)
+Rendered bands/_band (0.7ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Completed in 99ms (View: 85, DB: 4) | 200 OK [http://localhost/]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:57:07) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Load (0.2ms)[0m   [0;1mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;35;1mBand Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.1ms)[0m   [0;1mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (1.2ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.6ms)
+Completed in 35ms (View: 16, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:57:25) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.6ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.1ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;36;1mBand Columns (1.9ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.8ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Completed in 35ms (View: 15, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:57:57) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Load (0.7ms)[0m   [0;1mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;35;1mBand Columns (1.9ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.5ms)[0m   [0;1mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Completed in 32ms (View: 14, DB: 6) | 200 OK [http://localhost/]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 21:58:05) [GET]
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.7ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Load (0.2ms)[0m   [0mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;36;1mBand Columns (1.7ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.6ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.6ms)
+Completed in 94ms (View: 78, DB: 5) | 200 OK [http://localhost/]

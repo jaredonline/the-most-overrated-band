@@ -1,5 +1,5 @@
 <div class="grid_12 band-name">
-  <h1><%= @band.name %></h1>
+  <h1><%= @band.name %> <small> -- <%= @band.num_votes %></small> votes</h1>
 </div>
 
 <div class="grid_12 clearfix">
@@ -17,11 +17,20 @@
 </div>
 
 <div class="grid_12 band-name">
-  <h1>Comments</h1>
+  <h1 class="comments">Comments <small><%= @band.comments.length %> so far</small></h1>
   
-  <% form_for @band.comments.new, :url => band_comments_path(@band) do |f| %>
-    <%= render :partial => 'form' %>
+  <% if @band.comments.length == 0 %>
+    <i class="small">Be the first to comment by filling out the form below</i>
   <% end %>
   
   <%= render :partial => 'comment', :collection => @comments %>
+  
+  <h1 class="comments">Add a Comment</h1>
+  
+  <div class="comment-form-container">
+    <% form_for @band.comments.new, :url => band_comments_path(@band) do |f| %>
+      <%= render :partial => 'form', :locals => {:f => f} %>
+      <%= f.submit "Comment!" %>
+    <% end %>
+  </div>
 </div>
