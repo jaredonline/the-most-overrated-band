@@ -14744,3 +14744,92 @@ Rendered bands/_band (0.4ms)
 Rendered bands/_band (0.4ms)
 Rendered bands/_band (1.1ms)
 Completed in 59ms (View: 13, DB: 35) | 200 OK [http://localhost/]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 17:14:10) [GET]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.5ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Load (0.2ms)[0m   [0;1mSELECT * FROM `bands` [0m
+  [4;35;1mBand Load (0.1ms)[0m   [0mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;36;1mBand Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (0.4ms)[0m   [0mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (55.3ms)
+Rendered bands/_band (0.6ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.3ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.3ms)
+Rendered bands/_band (0.3ms)
+Completed in 86ms (View: 67, DB: 5) | 200 OK [http://localhost/]
+
+
+Processing BandsController#up (for 127.0.0.1 at 2009-02-13 17:14:21) [GET]
+  Parameters: {"id"=>"8"}
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (2.4ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mVote Load (0.9ms)[0m   [0;1mSELECT * FROM `votes` WHERE (user_id = 1 AND band_id = 8) [0m
+  [4;35;1mVote Columns (1.4ms)[0m   [0mSHOW FIELDS FROM `votes`[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mBEGIN[0m
+  [4;35;1mVote Create (0.2ms)[0m   [0mINSERT INTO `votes` (`updated_at`, `user_id`, `band_id`, `direction`, `created_at`) VALUES('2009-02-14 00:14:21', 1, 8, 1, '2009-02-14 00:14:21')[0m
+  [4;36;1mSQL (0.9ms)[0m   [0;1mCOMMIT[0m
+  [4;35;1mBand Columns (1.3ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mBand Load (0.5ms)[0m   [0;1mSELECT * FROM `bands` WHERE (`bands`.`id` = 8) [0m
+  [4;35;1mSQL (0.2ms)[0m   [0mBEGIN[0m
+  [4;36;1mBand Update (0.2ms)[0m   [0;1mUPDATE `bands` SET `num_votes` = 2, `updated_at` = '2009-02-14 00:14:21' WHERE `id` = 8[0m
+  [4;35;1mSQL (1.0ms)[0m   [0mCOMMIT[0m
+Redirected to /
+Completed in 28ms (DB: 10) | 302 Found [http://localhost/bands/8/up]
+
+
+Processing BandsController#index (for 127.0.0.1 at 2009-02-13 17:14:21) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.8ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.2ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Load (0.4ms)[0m   [0;1mSELECT * FROM `bands` [0m
+  [4;35;1mBand Load (0.3ms)[0m   [0mSELECT * FROM `bands` ORDER BY num_votes DESC LIMIT 1[0m
+  [4;36;1mBand Columns (1.5ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+  [4;35;1mBand Load (198.9ms)[0m   [0mSELECT * FROM `bands` WHERE (id != 3) ORDER BY num_votes DESC[0m
+Rendering template within layouts/application
+Rendering bands/index
+Rendered bands/_winner (1.8ms)
+Rendered bands/_band (0.7ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.4ms)
+Rendered bands/_band (0.5ms)
+Rendered bands/_band (0.4ms)
+Completed in 231ms (View: 16, DB: 203) | 200 OK [http://localhost/]
+
+
+Processing BandsController#new (for 127.0.0.1 at 2009-02-13 17:22:05) [GET]
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mUser Columns (1.6ms)[0m   [0;1mSHOW FIELDS FROM `users`[0m
+  [4;35;1mUser Load (0.8ms)[0m   [0mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;36;1mBand Columns (4.6ms)[0m   [0;1mSHOW FIELDS FROM `bands`[0m
+Rendering template within layouts/application
+Rendering bands/new
+Completed in 27ms (View: 9, DB: 7) | 200 OK [http://localhost/bands/new]
+
+
+Processing BandsController#create (for 127.0.0.1 at 2009-02-13 17:22:08) [POST]
+  Parameters: {"commit"=>"Add new band", "band"=>{"name"=>"hlkjh"}, "authenticity_token"=>"032dfebc4a3604dceca900d60385fc90e1cbfcbe"}
+  [4;35;1mSQL (0.1ms)[0m   [0mSET NAMES 'utf8'[0m
+  [4;36;1mSQL (0.1ms)[0m   [0;1mSET SQL_AUTO_IS_NULL=0[0m
+  [4;35;1mUser Columns (2.4ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mUser Load (0.2ms)[0m   [0;1mSELECT * FROM `users` WHERE (`users`.`user_key` = '9a4f0f7e9c85b6c568acead08096868d458e4475') LIMIT 1[0m
+  [4;35;1mBand Columns (2.3ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+Rendering template within layouts/application
+Rendering bands/new
+Completed in 903ms (View: 10, DB: 5) | 200 OK [http://localhost/bands]
