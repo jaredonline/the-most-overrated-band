@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :tests
+  map.simple_captcha '/simple_captcha/:action', :controller => 'simple_captcha'
 
   # The priority is based upon order of creation: first created -> highest priority.
   

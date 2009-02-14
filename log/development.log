@@ -14833,3 +14833,29 @@ Processing BandsController#create (for 127.0.0.1 at 2009-02-13 17:22:08) [POST]
 Rendering template within layouts/application
 Rendering bands/new
 Completed in 903ms (View: 10, DB: 5) | 200 OK [http://localhost/bands]
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSET NAMES 'utf8'[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSET SQL_AUTO_IS_NULL=0[0m
+  [4;36;1mSQL (0.5ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.1ms)[0m   [0mSELECT version FROM schema_migrations[0m
+Migrating to CreateBands (20090211050146)
+Migrating to CreateVotes (20090211050150)
+Migrating to CreateUsers (20090211052510)
+Migrating to RenameVotesColumn (20090211064457)
+Migrating to CreateSimpleCaptchaData (20090214003300)
+  [4;36;1mSQL (162.7ms)[0m   [0;1mCREATE TABLE `simple_captcha_data` (`id` int(11) DEFAULT NULL auto_increment PRIMARY KEY, `key` varchar(40), `value` varchar(6), `created_at` datetime, `updated_at` datetime) ENGINE=InnoDB[0m
+  [4;35;1mSQL (26.5ms)[0m   [0mINSERT INTO schema_migrations (version) VALUES ('20090214003300')[0m
+  [4;36;1mSQL (0.6ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (0.4ms)[0m   [0mSELECT version FROM schema_migrations[0m
+  [4;36;1mSQL (0.3ms)[0m   [0;1mSHOW TABLES[0m
+  [4;35;1mSQL (2.0ms)[0m   [0mSHOW FIELDS FROM `bands`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `bands`[0m
+  [4;35;1mSQL (0.5ms)[0m   [0mSHOW KEYS FROM `bands`[0m
+  [4;36;1mSQL (3.1ms)[0m   [0;1mSHOW FIELDS FROM `simple_captcha_data`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `simple_captcha_data`[0m
+  [4;36;1mSQL (0.4ms)[0m   [0;1mSHOW KEYS FROM `simple_captcha_data`[0m
+  [4;35;1mSQL (1.2ms)[0m   [0mSHOW FIELDS FROM `users`[0m
+  [4;36;1mSQL (1.7ms)[0m   [0;1mdescribe `users`[0m
+  [4;35;1mSQL (0.8ms)[0m   [0mSHOW KEYS FROM `users`[0m
+  [4;36;1mSQL (1.2ms)[0m   [0;1mSHOW FIELDS FROM `votes`[0m
+  [4;35;1mSQL (1.8ms)[0m   [0mdescribe `votes`[0m
+  [4;36;1mSQL (1.0ms)[0m   [0;1mSHOW KEYS FROM `votes`[0m

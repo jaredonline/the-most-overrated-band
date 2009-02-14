@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090211064457) do
+ActiveRecord::Schema.define(:version => 20090214003300) do
 
   create_table "bands", :force => true do |t|
     t.string   "name"
@@ -17,6 +17,13 @@ ActiveRecord::Schema.define(:version => 20090211064457) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "num_votes",  :default => 1
+  end
+
+  create_table "simple_captcha_data", :force => true do |t|
+    t.string   "key",        :limit => 40
+    t.string   "value",      :limit => 6
+    t.datetime "created_at"
+    t.datetime "updated_at"
   end
 
   create_table "users", :force => true do |t|
