@@ -16,7 +16,7 @@ class BandsController < ApplicationController
     @band = Band.new(params[:band])
     
     band_names = []
-    doc = Hpricot.XML(open('http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=' + @band.name.parameterize.to_str + '&api_key=' + LASTFM_API_KEY))
+    doc = Hpricot.XML(open('http://ws.audioscrobbler.com/2.0/?method=artist.search&artist=' + @band.url_escape + '&api_key=' + LASTFM_API_KEY))
     
     (doc/"artist/name").each do |artist_name|
        band_names << artist_name.inner_html
