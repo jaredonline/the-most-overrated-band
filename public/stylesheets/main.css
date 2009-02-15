@@ -89,6 +89,9 @@ p {
 		#title h1 a:visited {
 			color: white;
 		}
+		#title h1 small {
+		  font-size: .7em;
+		}
 
 
 .comment-form-container {
