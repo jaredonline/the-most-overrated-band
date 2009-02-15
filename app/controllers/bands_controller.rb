@@ -57,9 +57,10 @@ class BandsController < ApplicationController
     band = Band.find_by_permalink(params[:id])
     vote = Vote.find(:all, :conditions => "user_id = #{@user.id} AND band_id = #{band.id}")
     if vote.length == 0
-      vote = Vote.new(:band_id => params[:id], :user_id => @user.id, :direction => 1)
+      vote = Vote.new(:band_id => band.id, :user_id => @user.id, :direction => 1)
       vote.save
       band.num_votes = band.num_votes.next
+      band.num_up_votes = band.num_up_votes.next
       band.save
     else
       flash[:error] = "You already voted on that band this week.  Come back after midnight on Sunday."
@@ -71,9 +72,10 @@ class BandsController < ApplicationController
     band = Band.find_by_permalink(params[:id])
     vote = Vote.find(:all, :conditions => "user_id = #{@user.id} AND band_id = #{band.id}")
     if vote.length == 0  
-      vote = Vote.new(:band_id => params[:id], :user_id => @user.id, :direction => -1)
+      vote = Vote.new(:band_id => band.id, :user_id => @user.id, :direction => -1)
       vote.save
       band.num_votes = band.num_votes - 1
+      band.num_down_votes = band.num_down_votes.next
       band.save
     else
       flash[:error] = "You already voted on that band this week.  Come back after midnight on Sunday."

@@ -9,15 +9,17 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20090214015440) do
+ActiveRecord::Schema.define(:version => 20090215020414) do
 
   create_table "bands", :force => true do |t|
     t.string   "name"
-    t.integer  "rank",       :default => 0
+    t.integer  "rank",           :default => 0
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "num_votes",  :default => 1
+    t.integer  "num_votes",      :default => 1
     t.string   "permalink"
+    t.integer  "num_up_votes",   :default => 1
+    t.integer  "num_down_votes", :default => 0
   end
 
   create_table "comments", :force => true do |t|

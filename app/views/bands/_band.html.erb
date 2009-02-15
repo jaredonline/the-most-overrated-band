@@ -7,7 +7,7 @@ end
 %>
 
 <!-- Band Block -->
-<div class="grid_12 band <%= tag %> ">
+<div class="grid_9 alpha band <%= tag %> ">
 	
 	<!-- Band Rank -->
 	<div class="alpha grid_1 rank">
@@ -15,7 +15,7 @@ end
 	</div>
 	
 	<!-- Band Info -->
-	<div class="omega grid_11 name">
+	<div class="omega grid_8 name">
 		<div class="grid_1 vote alpha">
 			<div class="grid_1 up">
 				<%= link_to '<span>Up</span>', up_band_path(band) %>
@@ -25,10 +25,22 @@ end
 			</div>
 		</div>
 		
-		<div class="omega grid_10 band-name">
-			<%= link_to band.name, band_path(band) %> - <span class="votes"><%= band.num_votes %> votes</span> - <span class="comments"><%= link_to band.comments.length.to_s + ' Comments', band_path(band) %></span>
-			<div class="grid_9 submitted">
+		<div class="omega grid_6 band-name">
+			<%= link_to band.name, band_path(band) %> <span class="votes">(<%= band.num_votes_formatted %>)</span>
+			<span class="comment-link">
+			  <%= link_to band.comments.length.to_s + ' Comments', band_path(band) %>
+			</span>
+			<div class="grid_6 submitted">
 				Submitted <%= vague_timeago(band.created_at) %>
+			</div>
+		</div>
+		
+		<div class="grid_1 vote omega direction">
+			<div class="grid_1 up">
+				<span><%= band.num_up_votes %> Up</span>
+			</div>
+			<div class="grid_1 down">
+				<span><%= band.num_down_votes %> Down</span>
 			</div>
 		</div>
 	</div>

@@ -142,7 +142,7 @@ p {
 		#content .submitted {
 			font-style: italic;
 			font-size: .5em;
-			margin-top: 5px;
+			margin: 0;
 		}
 		#content .band-name {
 			font-size: 1.5em;
@@ -154,9 +154,15 @@ p {
 		    font-weight: normal;
 		    border-bottom: 1px solid #999;
 		  }
-			#content .band-name .votes, #content .band-name .comments {
+			#content .band-name .votes {
 				font-size: .9em;
 				color: #999;
+			}
+			#content .band-name .comment-link {
+			  font-size: .6em;
+			  margin: 0;  
+			  background: url(/images/css/comments.gif) no-repeat 0 center;
+			  padding-left: 20px;
 			}
 		#content .odd .name {
 			background-color: #efefef;
@@ -178,6 +184,16 @@ p {
 	padding: 0;
 	height: 60px;
 }
+  #content .vote.direction {
+    color: #666;
+    font-size: .8em;
+  }
+    #content .vote.direction .up span, #content .vote.direction .down span {
+      display: block;
+      margin: 0;
+      margin-top: 10%;
+      text-align: center;
+    }
 #content .up {
 	background-color: #C4FFBD;
 	margin: 0;

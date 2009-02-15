@@ -21,4 +21,12 @@ class Band < ActiveRecord::Base
   def to_param
     permalink
   end
+  
+  def num_votes_formatted
+    if num_votes > 0
+      '+' + num_votes.to_s
+    else
+      num_votes.to_s
+    end
+  end
 end
