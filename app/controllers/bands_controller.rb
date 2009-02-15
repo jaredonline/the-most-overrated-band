@@ -40,6 +40,10 @@ class BandsController < ApplicationController
     
   end
   
+  def new
+    @band = Band.new
+  end
+  
   def show
     @band = Band.find_by_permalink(params[:id])
     @comments = @band.comments.find(:all, :order => "created_at DESC")
