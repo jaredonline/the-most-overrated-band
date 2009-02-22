@@ -1,8 +1,18 @@
-<div class="grid_12 band-name">
+<div class="grid_11 prefix_1">
+  <%= link_to '&lt;&lt; Back to Bands', '/' %>
+</div>
+
+<div class="clearfix"></div>
+
+<div class="alpha rank grid_1">
+  #<%= @band.rank %>
+</div>
+
+<div class="grid_11 band-name">
   <h1><%= @band.name %> <small> -- <%= @band.num_votes %></small> votes</h1>
 </div>
 
-<div class="grid_12 clearfix">
+<div class="grid_11 prefix_1 clearfix">
   <% if @band_image.length != 0 %>
     <div class="img-left">
       <%= image_tag @band_image %>
@@ -16,7 +26,7 @@
   <% end %>
 </div>
 
-<div class="grid_12 band-name">
+<div class="grid_11 prefix_1 band-name">
   <h1 class="comments">Comments <small><%= @band.comments.length %> so far</small></h1>
   
   <% if @band.comments.length == 0 %>
