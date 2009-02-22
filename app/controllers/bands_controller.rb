@@ -62,10 +62,16 @@ class BandsController < ApplicationController
       band.num_votes = band.num_votes.next
       band.num_up_votes = band.num_up_votes.next
       band.save
+      rank = 0
+      for b in Band.find(:all, :order => "num_votes DESC")
+        rank = rank.next
+        b.rank = rank
+        b.save
+      end
     else
       flash[:error] = "You already voted on that band this week.  Come back after midnight on Sunday."
     end
-    redirect_to "/"
+    redirect_to band_path(band)
   end
   
   def down
@@ -80,7 +86,7 @@ class BandsController < ApplicationController
     else
       flash[:error] = "You already voted on that band this week.  Come back after midnight on Sunday."
     end
-    redirect_to "/"
+    redirect_to band_path(band)
   end
   
 end
